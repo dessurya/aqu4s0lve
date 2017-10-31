@@ -1,0 +1,122 @@
+#navbar{
+	background-color: rgb(101,100,106);
+}
+
+/* about */
+	#about{
+		position: relative;
+		width: 100%;
+		padding-top: 140px;
+		padding-bottom: 40px;
+	}
+	#about #wrapper{
+		position: relative;
+		width: 80%;
+		margin: 0 auto;
+		color: rgb(48,48,48);
+	}
+	#about #wrapper h1{
+		text-align: center;
+		font-size: 56px;
+	    font-family: 'Slabo27px-Regular';
+		margin-top: 0px;
+		margin-bottom: 40px;
+	}
+	#about #wrapper .bar{
+	    font-family: 'Quicksand Regular';
+		float: left;
+		line-height: 1.6;
+		width: 47.5%;
+	}
+	#about #wrapper .bar:nth-child(even){
+		padding-right: 2.5%;
+	}
+	#about #wrapper .bar:nth-child(odd){
+		padding-left: 2.5%;
+	}
+/* about */
+
+/* facility */
+	#facility{
+		position: relative;
+		width: 100%;
+		padding-top: 40px;
+		padding-bottom: 40px;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	#facility #wrapper{
+		position: relative;
+		width: 80%;
+		margin: 0 auto;
+		color: white;
+	}
+	#facility #wrapper h1{
+		text-align: center;
+		font-size: 56px;
+	    font-family: 'Slabo27px-Regular';
+		margin-top: 0px;
+		margin-bottom: 20px;
+	}
+	#facility #wrapper p{
+	    font-family: 'Quicksand Regular';
+		text-align: center;
+		width: 45%;
+		margin: 15px auto;
+		line-height: 1.6;
+	}
+/* facility */
+
+/* certification */
+	#certification{
+		position: relative;
+		width: 100%;
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+	#certification #wrapper{
+		position: relative;
+		width: 80%;
+		margin: 0 auto;
+		color: rgb(48,48,48);
+	}
+	#certification #wrapper h1{
+		text-align: center;
+		font-size: 56px;
+	    font-family: 'Slabo27px-Regular';
+		margin-top: 0px;
+		margin-bottom: 20px;
+	}
+	#certification #wrapper .item{
+	    font-family: 'Quicksand Medium';
+	    text-align: center;
+	}
+	#certification #wrapper .item #center{
+		display: table;
+		width: 100%;
+		text-align: center;
+	}
+	#certification #wrapper .item #midle{
+		display: table-cell;
+		vertical-align: middle;
+		width: 100%;
+		height: 300px;
+		text-align: center;
+	}
+	#certification #wrapper .item #midle img{
+		text-align: center;
+		max-height: 300px;
+		margin: 0 auto;
+	}
+/* certification */
+
+/* vidio */
+	#vidio{
+		position: relative;
+		width: 100%;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		margin-bottom: -5px;
+	}
+/* vidio */
