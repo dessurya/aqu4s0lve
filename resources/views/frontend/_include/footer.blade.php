@@ -27,22 +27,22 @@
 					</a>
 				</p>
 				<p>
-					<a href="">
+					<a href="{{ route('frontend.product') }}">
 						Products
 					</a>
 				</p>
 				<p>
-					<a href="">
+					<a href="{{ route('frontend.solutions') }}">
 						Solutions
 					</a>
 				</p>
 				<p>
-					<a href="">
+					<a href="{{ route('frontend.news') }}">
 						News
 					</a>
 				</p>
 				<p>
-					<a href="">
+					<a href="{{ route('frontend.careers') }}">
 						Career
 					</a>
 				</p>
@@ -57,22 +57,22 @@
 			<div id="contain">
 				<h2>PRODUCTS</h2>
 				<p>
-					<a href="">
+					<a href="{{ route('frontend.product.select', ['slug'=>'go-fress']) }}">
 						Go Fress
 					</a>
 				</p>
 				<p>
-					<a href="">
+					<a href="{{ route('frontend.product.select', ['slug'=>'ice-n-cool']) }}">
 						Ice N Cool
 					</a>
 				</p>
 				<p>
-					<a href="">
+					<a href="{{ route('frontend.product.select', ['slug'=>'wake-up']) }}">
 						Wake Up!
 					</a>
 				</p>
 				<p>
-					<a href="">
+					<a href="{{ route('frontend.product.select', ['slug'=>'herbafress']) }}">
 						Herbafress
 					</a>
 				</p>
@@ -82,7 +82,7 @@
 			<div id="contain">
 				<h2>SOLUTIONS</h2>
 				<p>
-					<a href="">
+					<a href="{{ route('frontend.solutions') }}">
 						White Lebelling
 					</a>
 				</p>
@@ -91,8 +91,10 @@
 		<div class="clearfix"></div>
 		<div id="copyright">
 			<label>© 2017 Aquasolve Sanaria</label>
+			{{--
 			<br>
 			<label>Web Development By <a href="http://amadeo.id/"><img src="{{ asset('amadeo/images-base/logo-amadeo.png') }}"></a></label>
+			--}}
 		</div>
 	</div>
 </div>

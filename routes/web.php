@@ -26,5 +26,24 @@
 		Route::post('/contact/store', 'Frontend\FrontendController@contactStore')
 			->name('frontend.contact.store');
 	// contact
-
+	// product
+		Route::get('/product', 'Frontend\FrontendController@product')
+			->name('frontend.product');
+		Route::get('/product/{slug}', 'Frontend\FrontendController@product')
+			->name('frontend.product.select');
+	// product
+	// solutions
+		Route::get('/solutions', 'Frontend\FrontendController@solutions')
+			->name('frontend.solutions');
+	// solutions
+	// news
+		Route::get('/news', 'Frontend\FrontendController@news')
+			->name('frontend.news');
+		Route::get('/news/{slug}', 'Frontend\FrontendController@newsView')
+			->name('frontend.news.view');
+	// news
+	// careers
+		Route::get('/careers', 'Frontend\FrontendController@careers')
+			->name('frontend.careers');
+	// careers
 // frontend

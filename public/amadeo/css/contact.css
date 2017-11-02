@@ -78,3 +78,12 @@
 		border-color: #d6e9c6;
 	}
 /* form */
+
+/* mobile */
+		@media (max-width: 480px) {
+			#send-message #wrapper{
+				width: 90%;
+				margin: 0 auto;
+			}
+		}
+	/* mobile */

@@ -1,14 +1,3 @@
-// for banner slide
-	$("#banner-slider").owlCarousel({
-		navigation : false,
-		items: 1,
-		singleItem:true,
-		pagination:true,
-		autoPlay: false,
-	    stopOnHover:true
-	});
-// for banner slide
-
 // for product select
 	$(".product-select.midle").click(function(){
 	    var Name = $(this).data('name');

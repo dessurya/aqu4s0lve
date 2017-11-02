@@ -34,8 +34,8 @@
 
     // for mobile
     if(win.width() < 512){
-    	$('#navigasi #detail.wrapper #name.bar #burger-icon').click(function(){
-    		$('#navigasi').toggleClass("aktif");;
+    	$('#navbar #container #logo.bar .valign-midle #burger-icon').click(function(){
+    		$('#navbar').toggleClass("active");;
     	});
     }
     // for mobile

@@ -10,95 +10,132 @@ use Validator;
 
 class FrontendController extends Controller
 {
-    function home () {
-	    return view('frontend.home-page.index');
-	}
+	// home
+	    function home () {
+		    return view('frontend.home-page.index');
+		}
+	// home
 
-	function about () {
-	    return view('frontend.about-page.index');
-	}
+	// about
+		function about () {
+		    return view('frontend.about-page.index');
+		}
+	// about
 
-	function contact () {
-	    return view('frontend.contact-page.index');
-	}
+	// contact
+		function contact () {
+		    return view('frontend.contact-page.index');
+		}
+		function contactStore (Request $request){
+			$message = [
+				'name.required' 	=> 'required',
+				'name.min' 		=> 'to short',
+				'email.required'  => 'required',
+				'email.email'  	=> 'format email salah',
+				'subject.required'=> 'required',
+				'subject.min' 	=> 'to short',
+				'message.required'	=> 'required',
+				'message.min' 		=> 'to short',
+				'message.max' 		=> 'to long',
+				// 'g-recaptcha-response.required'  => 'required',
+		    ];
 
-	function contactStore (Request $request){
-		$message = [
-			'name.required' 	=> 'required',
-			'name.min' 		=> 'to short',
-			'email.required'  => 'required',
-			'email.email'  	=> 'format email salah',
-			'subject.required'=> 'required',
-			'subject.min' 	=> 'to short',
-			'message.required'	=> 'required',
-			'message.min' 		=> 'to short',
-			'message.max' 		=> 'to long',
-			// 'g-recaptcha-response.required'  => 'required',
-	    ];
+		    $validator = Validator::make($request->all(), [
+				'name' 	=> 'required|min:3',
+				'email' 	=> 'required|email',
+				'subject'	=> 'required|min:3',
+				'message' 	=> 'required|min:10|max:580',
+				// 'g-recaptcha-response' => 'required',
+			], $message);
 
-	    $validator = Validator::make($request->all(), [
-			'name' 	=> 'required|min:3',
-			'email' 	=> 'required|email',
-			'subject'	=> 'required|min:3',
-			'message' 	=> 'required|min:10|max:580',
-			// 'g-recaptcha-response' => 'required',
-		], $message);
+		    if($validator->fails()){
+		        return redirect()
+		        	->route('frontend.contact')
+		        	->withErrors($validator)
+		        	->withInput()
+		        	->with('autofocus', true)
+		        	->with('info', 'Invalid...!')
+		        	->with('alert', 'alert-danger');
+		    }
 
-	    if($validator->fails()){
-	        return redirect()
-	        	->route('frontend.contact')
-	        	->withErrors($validator)
-	        	->withInput()
-	        	->with('autofocus', true)
-	        	->with('info', 'Invalid...!')
-	        	->with('alert', 'alert-danger');
-	    }
+		    if(!str_contains($request->email, ['gmail', 'yahoo', 'ymail', 'hotmail'])){
+		        return redirect()
+		          ->route('frontend.contact')
+		          ->with('autofocus', true)
+		          ->with('info', 'Success...!')
+		          ->with('alert', 'alert-success');
+		    }
+		    if(str_contains($request->pesan, ['href', 'http', 'https', 'porn', 'pocker'])){
+		        return redirect()
+		          ->route('frontend.contact')
+		          ->with('autofocus', true)
+		          ->with('info', 'Success...!')
+		          ->with('alert', 'alert-success');
+		    }
 
-	    if(!str_contains($request->email, ['gmail', 'yahoo', 'ymail', 'hotmail'])){
-	        return redirect()
-	          ->route('frontend.contact')
-	          ->with('autofocus', true)
-	          ->with('info', 'Success...!')
-	          ->with('alert', 'alert-success');
-	    }
-	    if(str_contains($request->pesan, ['href', 'http', 'https', 'porn', 'pocker'])){
-	        return redirect()
-	          ->route('frontend.contact')
-	          ->with('autofocus', true)
-	          ->with('info', 'Success...!')
-	          ->with('alert', 'alert-success');
-	    }
+		    // DB::transaction(function() use($request){
+		        
+		    //     $save = new Kontak;
+		    //     $save->nama = $request->name;
+		    //     $save->email = $request->email;
+		    //     $save->telepon = $request->telpon;
+		    //     $save->subyek = $request->subject;
+		    //     $save->pesan = $request->pesan;
+		    //     $save->save();
 
-	    // DB::transaction(function() use($request){
-	        
-	    //     $save = new Kontak;
-	    //     $save->nama = $request->name;
-	    //     $save->email = $request->email;
-	    //     $save->telepon = $request->telpon;
-	    //     $save->subyek = $request->subject;
-	    //     $save->pesan = $request->pesan;
-	    //     $save->save();
+		    //     $getSendTo = General::first();
 
-	    //     $getSendTo = General::first();
+		    //     try {
+		    //       Mail::send('frontend.kontak-page.mail', ['request' => $request], function($message) use ($request, $getSendTo) {
+		    //         $message->from('administrator@pancalogam.com', 'Administrator')
+		    //                 ->to($getSendTo->email_to);
+		    //         if ($getSendTo->email_cc != null) {
+		    //                 $message->cc($getSendTo->email_cc);
+		    //         }
+		    //                 $message->subject('New Inbox From : '.$request->email);
+		    //       });
+		    //     } catch (\Exception $e) {
+		    //       // dd($e);
+		    //     }
+		    // });
 
-	    //     try {
-	    //       Mail::send('frontend.kontak-page.mail', ['request' => $request], function($message) use ($request, $getSendTo) {
-	    //         $message->from('administrator@pancalogam.com', 'Administrator')
-	    //                 ->to($getSendTo->email_to);
-	    //         if ($getSendTo->email_cc != null) {
-	    //                 $message->cc($getSendTo->email_cc);
-	    //         }
-	    //                 $message->subject('New Inbox From : '.$request->email);
-	    //       });
-	    //     } catch (\Exception $e) {
-	    //       // dd($e);
-	    //     }
-	    // });
+			return redirect()
+				->route('frontend.contact')
+				->with('autofocus', true)
+				->with('info', 'Success...!')
+				->with('alert', 'alert-success');
+		}
+	// contact
 
-		return redirect()
-			->route('frontend.contact')
-			->with('autofocus', true)
-			->with('info', 'Success...!')
-			->with('alert', 'alert-success');
-	}
+	// product
+		function product($slug = null){
+			if ($slug == null) {
+			    return view('frontend.product-page.index');
+			}
+			else{
+			    return view('frontend.product-page.index', compact('slug'));
+			}
+		}
+	// product
+
+	// solutions
+		function solutions () {
+		    return view('frontend.solutions-page.index');
+		}
+	// solutions
+
+	// news
+	    function news () {
+		    return view('frontend.news-page.index');
+		}
+		function newsView () {
+		    return view('frontend.news-page.view');
+		}
+	// news
+
+	// careers
+	    function careers () {
+		    return view('frontend.careers-page.index');
+		}
+	// careers
 }

@@ -47,7 +47,7 @@
 				</p>
 				<br>
 				<br>
-				<a href="" class="buton-style">Learn More</a>
+				<a href="{{ route('frontend.about') }}" class="buton-style">Learn More</a>
 			</div>
 		</div>
 		<div class="clearfix"></div>
@@ -132,7 +132,9 @@
 			@for($a=0; $a<=2; $a++)
 			<div class="item">
 				<div id="contain">
-					<div id="img" style="background-image: url('{{ asset('amadeo/images-base/banner.jpg') }}');"></div>
+					<a href="{{ route('frontend.news.view', ['slug'=>'slug']) }}">
+						<div id="img" style="background-image: url('{{ asset('amadeo/images-base/banner.jpg') }}');"></div>
+					</a>
 					<h3>Name of News</h3>
 					<p>May 16th 2017</p>
 				</div>
@@ -147,5 +149,15 @@
 
 @section('script')
 	<script type="text/javascript" src="{{ asset('amadeo/plugin/owl-carousel/owl.carousel.min.js') }}"></script>
-	<script type="text/javascript" src="{{ asset('amadeo/js/home.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('amadeo/js/product-select.js') }}"></script>
+	<script type="text/javascript">
+		$("#banner-slider").owlCarousel({
+			navigation : false,
+			items: 1,
+			singleItem:true,
+			pagination:true,
+			autoPlay: 5000,
+		    stopOnHover:true
+		});
+	</script>
 @endsection

@@ -3,6 +3,11 @@
 		<div id="logo" class="bar">
 			<div class="valign-midle">
 				<img src="{{ asset('amadeo/images-base/logo-aquasolve.png') }}">
+				<div id="burger-icon">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
 			</div>
 		</div>
 		<div id="list" class="bar">
@@ -23,39 +28,39 @@
 					</div>
 				</div>
 			</div>
-			<div class="valign-midle dropdown">
-				<a href="">PRODUCTS</a>
+			<div class="valign-midle {{ Route::is('frontend.product*') ? 'active' : '' }} dropdown">
+				<a href="{{ route('frontend.product') }}">PRODUCTS</a>
 				<div id="dropdown-container">
 					<div class="list">
-						<a href="">Go Fress</a>
+						<a href="{{ route('frontend.product.select', ['slug'=>'go-fress']) }}">Go Fress</a>
 					</div>
 					<div class="list dropright">
-						<a href="">Ice n Cool</a>
+						<a href="{{ route('frontend.product.select', ['slug'=>'ice-n-cool']) }}">Ice n Cool</a>
 						<div id="dropright-container">
 							<div class="item">
-								<a href="">Herbal Mint</a>
+								<a href="{{ route('frontend.product.select', ['slug'=>'ice-n-cool']) }}">Herbal Mint</a>
 							</div>
 							<div class="item">
-								<a href="">Liquorice</a>
+								<a href="{{ route('frontend.product.select', ['slug'=>'ice-n-cool']) }}">Liquorice</a>
 							</div>
 						</div>
 					</div>
 					<div class="list">
-						<a href="">Wake Up</a>
+						<a href="{{ route('frontend.product.select', ['slug'=>'wake-up']) }}">Wake Up</a>
 					</div>
 					<div class="list">
-						<a href="">Herbafress</a>
+						<a href="{{ route('frontend.product.select', ['slug'=>'herbafress']) }}">Herbafress</a>
 					</div>
 				</div>
 			</div>
-			<div class="valign-midle">
-				<a href="">SOLUTIONS</a>
+			<div class="valign-midle {{ Route::is('frontend.solutions*') ? 'active' : '' }} dropdown">
+				<a href="{{ route('frontend.solutions') }}">SOLUTIONS</a>
 			</div>
-			<div class="valign-midle">
-				<a href="">NEWS</a>
+			<div class="valign-midle {{ Route::is('frontend.news*') ? 'active' : '' }} dropdown">
+				<a href="{{ route('frontend.news') }}">NEWS</a>
 			</div>
-			<div class="valign-midle">
-				<a href="">CAREERS</a>
+			<div class="valign-midle {{ Route::is('frontend.careers*') ? 'active' : '' }} dropdown">
+				<a href="{{ route('frontend.careers') }}">CAREERS</a>
 			</div>
 			<div class="valign-midle {{ Route::is('frontend.contact') ? 'active' : '' }}">
 				<a href="{{ route('frontend.contact') }}">CONTACTS</a>

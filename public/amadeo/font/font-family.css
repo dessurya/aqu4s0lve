@@ -4,8 +4,8 @@
         src: url('../font/Quicksand/Quicksand-Light.ttf');
     }
     @font-face {
-        font-family: 'Quicksand Light';
-        src: url('../font/Quicksand/Quicksand-Light.ttf');
+        font-family: 'Quicksand Regular';
+        src: url('../font/Quicksand/Quicksand-Regular.ttf');
     }
     @font-face {
         font-family: 'Quicksand Medium';

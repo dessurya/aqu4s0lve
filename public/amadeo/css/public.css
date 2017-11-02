@@ -19,6 +19,13 @@
 	.buton-style:hover{
 		opacity: .6
 	}
+	/* mobile */
+		@media (max-width: 480px) {
+			body{
+				overflow-x: hidden !important;
+			}
+		}
+	/* mobile */
 /* public */
 
 /* navbar */
@@ -162,6 +169,73 @@
 			height: 40px;
 		}
 	/* navbar in-scroll */
+	/* mobile */
+		@media (max-width: 480px) {
+			#navbar{
+				background-color: rgb(101,100,106);
+			}
+			#navbar #container{
+				width: 95%;
+			}
+			#navbar #container .bar{
+				display: block;
+				float: none !important;	
+			}
+			#navbar #container #logo.bar .valign-midle img{
+				height: 60px;
+			}
+			#navbar #container #logo.bar .valign-midle #burger-icon{
+				position: absolute;
+				border: .5px solid rgb(251,186,35);
+				border-radius: 4px;
+				padding: 5px;
+				right: 10px;
+				top: 15px;
+				cursor: pointer;
+			}
+			#navbar #container #logo.bar .valign-midle #burger-icon div{
+				width: 30px;
+				height: 3px;
+				margin: 3px 0;
+				background-color: rgb(251,186,35);
+				border-radius: 5px;
+			}
+			#navbar #container #list.bar .valign-midle{
+				display: block;
+				height: auto;
+				padding-left: 40px;
+				margin-bottom: 10px;
+			}
+			#navbar #container .bar .valign-midle.dropdown #dropdown-container{
+				position: relative;
+				visibility: visible;
+				opacity: 1;
+				background-color:rgba(239,130,34,0);
+				width: auto;
+				margin: 0;
+				padding: 0;
+				padding-left: 20px;
+			}
+			#navbar #container .bar .valign-midle.dropdown #dropdown-container:after{
+				display: none;
+			}
+
+			#navbar #container #list.bar{
+				visibility: hidden;
+				opacity: 0;
+				height: 0;
+				overflow-y: auto;
+				overflow-x: hidden;
+				transition: all 1.51s;
+			}
+			#navbar.active #container #list.bar{
+				visibility: visible;
+				opacity: 1;
+				height: 400px;
+			}
+			
+		}
+	/* mobile */
 /* navbar */
 
 /* footer */
@@ -221,4 +295,22 @@
 		top: 13px;
 		left: 10px;
 	}
+	/* mobile */
+		@media (max-width: 480px) {
+			#footer #wrapper #main.bar{
+				width: 100%;
+				text-align: right;
+				/*margin-bottom: 20px;*/
+			}
+			#footer #wrapper #sub-main.bar{
+				display: none;
+			}
+			#footer #wrapper .bar #contain{
+				padding: 0;
+			}
+			#footer #wrapper .bar #contain p{
+				margin-right: 20px;
+			}
+		}
+	/* mobile */
 /* footer */
